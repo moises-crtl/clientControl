@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
+<body>
+	<h1>
+		Control de Cliente
+	</h1>
+	<h2 th:text="${titulo}"></h2>
+	<div class="conteiner mt-4">
+	<a href="/agregarNuevo" class="btn btn-succes">Agregar Nuevo</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Nombre</th>
+					<th>Fecha</th>
+					<th>Sexo</th>
+					<th>Telefono</th>
+					<th>NumIdentificador</th>
+					<th>Ciudad</th>
+					<th>Provincia</th>
+					<th>Barrio</th>
+					<th>Direccion1</th>
+					<th>Direccion2</th>
+					<th>Estatus</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="findAllClient : ${findAllClient}">
+					<td th:text="${findAllClient.codigo}"></td>
+					<td th:text="${findAllClient.nombre}"></td>
+					<td th:text="${findAllClient.fecha}"></td>
+					<td th:text="${findAllClient.sexo}"></td>
+					<td th:text="${findAllClient.telefono}"></td>
+					<td th:text="${findAllClient.NumIdentificador}"></td>
+					<td th:text="${findAllClient.ciudad}"></td>
+					<td th:text="${findAllClient.provincia}"></td>
+					<td th:text="${findAllClient.barrio}"></td>
+					<td th:text="${findAllClient.direccion1}"></td>
+					<td th:text="${findAllClient.direccion2}"></td>
+					<td th:text="${findAllClient.estatus}"></td>
+					<td>
+						<a class="btn btn-warning">Editar</a>
+						<a class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+</body>
+</html>
